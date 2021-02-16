@@ -1,0 +1,53 @@
+
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h2>Home Page</h2>
+<p>Welcome to home!!, {{ username }}!</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+      <h1>Upload a file</h1>
+      <hr>
+
+      <form action="/login/home" method="POST" enctype="multipart/form-data">
+
+        <div class="form-group">
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" name="file" id="image">
+          </div>
+        </div>
+
+        <div class="msg">{{ msg1 }}</div>
+        <button type="submit" class="btn btn-primary">Upload</button>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+<h1> Your last uploaded file : {{file}}</h1>
+<h1>Number of words in the uploaded file: {{count}}</h1>
+<div class="container" align="left">
+		<h1>Download your file here</h1>
+                <a href="/login/download" target="blank"><button class='btn btn-default'>Download</button></a>
+   </div>
+   <div class="msg">{{ msg }}</div>
+
+        <style type="text/css">
+                 .container{
+                 text-align:center;
+                 font-align:center;
+                 padding:10px;}
+        </style>
+
+
+
+
+
+
+{% endblock %}
